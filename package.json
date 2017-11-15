@@ -1,0 +1,33 @@
+{
+  "name": "layout-extend",
+  "version": "1.0.0",
+  "description": "js layout with jquery",
+  "main": "Gruntfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/duzunwu512/layout.git"
+  },
+  "keywords": [
+    "jquery.layout3",
+    "jquery.layout4"
+  ],
+  "author": "duzunwu512",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/duzunwu512/layout/issues"
+  },
+  "homepage": "https://github.com/duzunwu512/layout#readme",
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-connect": "^1.0.2",
+    "grunt-contrib-jshint": "^1.1.0",
+    "grunt-contrib-qunit": "^2.0.0",
+    "grunt-contrib-sass": "^1.0.0",
+    "grunt-contrib-uglify": "^3.1.0",
+    "grunt-contrib-watch": "^1.0.0"
+  }
+}

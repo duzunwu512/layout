@@ -1,0 +1,134 @@
+#editor_wrap {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+#editor_wrap {
+  position: relative;
+  clear: both;
+  background: #0cc;
+  border: 1px solid #BBB;
+}
+
+#editor_wrap .l_panel {
+  float: left;
+  height: 100%;
+  background: #ccc;
+  overflow: hidden;
+}
+
+#editor_wrap .r_panel {
+  margin-left: 4px;
+  height: 100%;
+  background: #ccc;
+  overflow: hidden;
+}
+
+#editor_wrap .s_panel {
+  height: 100%;
+  background: #ccc;
+  overflow: hidden;
+  position: relative;
+}
+
+#editor_wrap .spliter-h {
+  float: left;
+  width: 4px;
+  height: 100%;
+  left: 437px;
+  position: absolute;
+  cursor: e-resize;
+  background: #ddd;
+  z-index: 5;
+  border-left: 1px solid #BBB;
+  border-right: 1px solid #BBB;
+}
+
+#editor_wrap .spliter-v {
+  height: 4px;
+  cursor: n-resize;
+  background: #ddd;
+  z-index: 5;
+  border-top: 1px solid #BBB;
+  border-bottom: 1px solid #BBB;
+}
+
+.CodeMirror {
+  height: 100%;
+  font-family: Menlo,Monaco,Consolas,"Andale Mono","lucida console","Courier New",monospace;
+  font-size: 14px;
+  line-height: 16px;
+}
+
+textarea {
+  height: 100%;
+  width: 100%;
+}
+
+.selected {
+  background: #e9f;
+  border: 1px solid #666666;
+}
+
+.editor_toolbar {
+  cursor: pointer;
+  position: absolute;
+  top: 5px;
+  right: 20px;
+  border: 1px solid #ddd;
+  padding: 0px 5px;
+  font-size: 14px;
+  border-radius: 5px;
+  color: #ddd;
+  z-index: 5;
+}
+
+.editor_toolbar:hover {
+  color: #111;
+  border: 1px solid #999;
+}
+
+.editor_toolbar .toolbtn {
+  padding: 0px 5px;
+  font-size: 18px;
+}
+
+.editor_toolbar .toolbtn:hover {
+  color: red;
+}
+
+.spanel_mark {
+  width: 100%;
+  height: 100%;
+  left: 0px;
+  top: 0px;
+  position: absolute;
+  filter: alpha(Opacity=100);
+  -moz-opacity: 1;
+  opacity: 1;
+}
+
+.max-panel {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0px;
+  top: 0px;
+  display: none;
+  z-index: 100;
+}
+
+.p_panel textarea {
+  font-size: 12px;
+}
+
+/*# sourceMappingURL=layout.css.map */

@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+
+	<link href="https://cdn.bootcss.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="src/layout.css">
+	
+	
+<style>
+
+	
+</style>
+</head>
+<body>
+	
+	<div class="container">
+    <div id='editor_wrap'>		
+	</div>
+	</div>
+	<div id="id1" style="width: 100%; height: 100%; position: relative;"></div>
+	<div id="id2" style="width: 100%; height: 100%; position: relative;"></div>
+	<div id="id3" style="width: 100%; height: 100%; position: relative;"></div>
+	<div id="id4" style="width: 100%; height: 100%; position: relative;"></div>
+	<div id='test' style="clear:both;"></div>
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>	
+<script type="text/javascript" src="src/layout4.js"></script>
+<script>
+
+$(function(){
+	$("#editor_wrap").layout4({
+	lefttop:{background:'#111',el:'#id1',tip:'id1',maxWin:function(){console.log('maxWin');}}
+	,leftbottom:{background:'#5cc',el:'#id2',tip:'id2',maxWin:function(){console.log('maxWin');}}
+	,righttop:{background:'#a0a',el:'#id3',tip:'id3',maxWin:function(){console.log('maxWin');}}
+	,rightbottom:{background:'#0dd',el:'#id4',tip:'id4',maxWin:function(){console.log('maxWin');},minWin:function(){console.log('minWin');}}
+	,padding:50
+	,spliter_width:4
+	,height:'600px'
+	,moving:function(){
+		console.log('moving');
+		}
+	,dblclickpanel:function(){
+		console.log('dblclickpanel');
+	}
+	});
+
+	
+});
+
+</script>
+
+
+
+</body>
+</html>

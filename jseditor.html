@@ -1,0 +1,281 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+
+<link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+	<link href="https://cdn.bootcss.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="http://cdn.bootcss.com/codemirror/5.2.0/codemirror.min.css">
+	<link rel="stylesheet" href="src/layout.css">
+	<link rel="stylesheet" href="demo.css">
+	<!--引入css文件，用以支持主题-->
+	<link href="https://cdn.bootcss.com/codemirror/5.30.0/theme/eclipse.min.css" rel="stylesheet">
+	<link href="https://cdn.bootcss.com/codemirror/5.30.0/theme/seti.min.css" rel="stylesheet">
+	<link href="https://cdn.bootcss.com/codemirror/5.30.0/theme/dracula.min.css" rel="stylesheet">
+	<link href="https://cdn.bootcss.com/codemirror/5.30.0/addon/display/fullscreen.css" rel="stylesheet">
+	<link href="https://cdn.bootcss.com/codemirror/5.30.0/addon/hint/show-hint.min.css" rel="stylesheet">
+	<link href="https://cdn.bootcss.com/codemirror/5.30.0/addon/fold/foldgutter.min.css" rel="stylesheet">
+	
+	<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>	
+	<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>	
+	<script src="http://cdn.bootcss.com/codemirror/5.2.0/codemirror.min.js"></script>	
+	<script src="http://cdn.bootcss.com/codemirror/5.2.0/mode/htmlmixed/htmlmixed.min.js"></script>
+	<script src="http://cdn.bootcss.com/codemirror/5.2.0/mode/css/css.min.js"></script>
+	<script src="http://cdn.bootcss.com/codemirror/5.2.0/mode/javascript/javascript.min.js"></script>
+	<script src="https://cdn.bootcss.com/codemirror/5.30.0/addon/fold/xml-fold.min.js"></script>
+	<script src="http://cdn.bootcss.com/codemirror/5.2.0/mode/xml/xml.min.js"></script>
+	<script src="http://cdn.bootcss.com/codemirror/5.2.0/addon/edit/closetag.min.js"></script>
+	<script src="http://cdn.bootcss.com/codemirror/5.2.0/addon/edit/closebrackets.min.js"></script>
+	<!--支持代码折叠-->	
+	<script src="https://cdn.bootcss.com/codemirror/5.30.0/addon/fold/foldcode.min.js"></script>
+	<script src="https://cdn.bootcss.com/codemirror/5.30.0/addon/fold/foldgutter.min.js"></script>
+	<script src="https://cdn.bootcss.com/codemirror/5.30.0/addon/fold/brace-fold.min.js"></script>
+	<script src="https://cdn.bootcss.com/codemirror/5.30.0/addon/fold/comment-fold.min.js"></script>
+	<script src="https://cdn.bootcss.com/codemirror/5.30.0/addon/fold/indent-fold.min.js"></script>
+	<script src="https://cdn.bootcss.com/codemirror/5.30.0/addon/fold/markdown-fold.min.js"></script>
+	<!--全屏模式-->	
+	<script src="https://cdn.bootcss.com/codemirror/5.30.0/addon/display/fullscreen.min.js"></script>
+	<!--括号匹配-->
+	<script src="https://cdn.bootcss.com/codemirror/5.30.0/addon/edit/matchbrackets.min.js"></script>
+	<!--自动补全-->	
+	<script src="https://cdn.bootcss.com/codemirror/5.30.0/addon/hint/show-hint.min.js"></script>
+	<script src="https://cdn.bootcss.com/codemirror/5.30.0/addon/hint/anyword-hint.min.js"></script>
+	
+	
+<style>
+
+	
+</style>
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="btn-group">
+				<button type="button" class="btn btn-default">Jquery</button>
+				<button type="button" class="btn btn-default dropdown-toggle" 
+						data-toggle="dropdown">
+					<span class="caret"></span>
+					<span class="sr-only">切换下拉菜单</span>
+				</button>
+				<ul class="dropdown-menu" role="menu">
+					<li><a href="#"></a></li>
+					<li><a href="#">另一个功能</a></li>
+					<li><a href="#">其他</a></li>
+					<li class="divider"></li>
+					<li><a href="#">分离的链接</a></li>
+				</ul>
+			</div>
+			<button type="button" class="btn btn-success btn-right" id="view_btn"><span class='glyphicon glyphicon-send'/><span style="padding-left:10px;">预览<span></button>
+		</div>
+	</div>
+	
+	<div class="container">
+    <div id='editor_wrap'>		
+	</div>
+	</div>
+	<textarea class="editor"  id="cssCode" name="cssTextareaCode">
+/*这里是CSS样式编辑*/
+#editor_wrap .spliter-v{
+	height: 4px;  
+	cursor: n-resize;
+	background: #ddd; 
+	z-index:1000; 
+	border-top: 1px solid #BBB;
+	border-bottom: 1px solid #BBB;
+}		
+	</textarea>
+	<textarea class="editor"  id="jsCode" name="jstexTareaCode">
+	//这里JS编辑
+function aaa(aa){
+	var i=0;
+}
+	</textarea>
+	<textarea class="editor"  id="htmlCode" name="htmlTextareaCode">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;meta charset=&quot;utf-8&quot;&gt;
+&lt;title&gt;JS在线编辑&lt;/title&gt;
+&lt;script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"&gt;&lt;/script&gt;	
+&lt;style&gt;
+	/*css此处*/
+	
+&lt;/style&gt;
+&lt;script type='text/javascript'&gt;
+	/*js此处*/
+	
+&lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+
+&lt;h1&gt;CSS 实例!&lt;/h1&gt;
+&lt;p&gt;这是一个段落。&lt;/p&gt;
+
+&lt;div&gt;
+	
+	
+&lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+					</textarea>
+	<div id="iframewrapper" style="width: 100%; height: 100%; position: relative;"></div>
+	<div id='test' style="clear:both;"></div>
+
+<script type="text/javascript" src="src/layout4.js"></script>
+<script>
+
+$(function(){
+	$("#editor_wrap").layout4({
+	lefttop:{background:'#111',el:'#cssCode',tip:'css',maxWin:function(){editor_css.setSize('100%', '100%');}}
+	,leftbottom:{background:'#5cc',el:'#jsCode',tip:'javascript',maxWin:function(){editor_js.setSize('100%', '100%');}}
+	,righttop:{background:'#a0a',el:'#htmlCode',tip:'html',maxWin:function(){editor_html.setSize('100%', '100%');}}
+	,rightbottom:{background:'#0dd',el:'#iframewrapper',tip:'view',maxWin:function(){executejs();},minWin:function(){executejs();}}
+	,padding:50
+	,spliter_width:4
+	,height:'600px'
+	,moving:function(){
+		editor_css.setSize('100%', '100%');
+		editor_js.setSize('100%', '100%');
+		editor_html.setSize('100%', '100%');
+		}
+	,dblclickpanel:function(){
+		editor_css.setSize('100%', '100%');
+		editor_js.setSize('100%', '100%');
+		editor_html.setSize('100%', '100%');
+	}
+	});
+
+	document.onkeydown = function(){  
+        var oEvent = window.event;  
+        if (oEvent.keyCode == 66 && oEvent.ctrlKey) {  //这里只能用alt，shift，ctrl等去组合其他键event.altKey、event.ctrlKey、event.shiftKey 属性
+            executejs();
+        }  
+    }  
+	
+
+var mixedMode = {
+name: "htmlmixed",
+scriptTypes: [{matches: /\/x-handlebars-template|\/x-mustache/i,
+               mode: null},
+              {matches: /(text|application)\/(x-)?vb(a|script)/i,
+               mode: "vbscript"}]
+};
+var editor_js = CodeMirror.fromTextArea(document.getElementById("jsCode"), {
+	mode: 'text/javascript',
+	selectionPointer: true,
+	lineNumbers: true,
+	matchBrackets: true,
+	indentUnit: 4,
+	indentWithTabs: true
+	,theme:'eclipse'
+	,extraKeys: {
+		"Ctrl-Q": function(cm){ cm.foldCode(cm.getCursor()); },
+		"F11": function(cm) {
+          cm.setOption("fullScreen", !cm.getOption("fullScreen"));
+        },
+        "Esc": function(cm) {
+          if (cm.getOption("fullScreen")) cm.setOption("fullScreen", false);
+        }},
+    foldGutter: true,
+    gutters: ["CodeMirror-linenumbers", "CodeMirror-foldgutter"]
+});
+var editor_css = CodeMirror.fromTextArea(document.getElementById("cssCode"), {
+	mode: 'text/css',
+	selectionPointer: true,
+	lineNumbers: true,
+	matchBrackets: true,
+	indentUnit: 4,
+	indentWithTabs: true
+	,theme:'eclipse'//'dracula'
+	,extraKeys: {
+		"Ctrl-Q": function(cm){ cm.foldCode(cm.getCursor()); },
+		"F11": function(cm) {
+          cm.setOption("fullScreen", !cm.getOption("fullScreen"));
+        },
+        "Esc": function(cm) {
+          if (cm.getOption("fullScreen")) cm.setOption("fullScreen", false);
+        }
+	},
+    foldGutter: true,
+    gutters: ["CodeMirror-linenumbers", "CodeMirror-foldgutter"]
+});
+var editor_html = CodeMirror.fromTextArea(document.getElementById("htmlCode"), {
+	mode: mixedMode,
+	selectionPointer: true,
+	lineNumbers: true,
+	matchBrackets: true,
+	indentUnit: 4,
+	indentWithTabs: true
+	,theme:'eclipse'//'seti'
+	,extraKeys: {
+		"Ctrl-Q": function(cm){ cm.foldCode(cm.getCursor()); },
+        "F11": function(cm) {
+			cm.setOption("fullScreen", !cm.getOption("fullScreen"));
+        },
+        "Esc": function(cm) {
+          if (cm.getOption("fullScreen")) cm.setOption("fullScreen", false);
+        }
+    },
+    foldGutter: true,
+    gutters: ["CodeMirror-linenumbers", "CodeMirror-foldgutter"]
+    
+});	
+  editor_html.foldCode(CodeMirror.Pos(0, 0));
+
+	$("#view_btn").on("click", function(){
+		executejs();
+	});
+	
+	executejs();
+function executejs(){
+
+	var html_text = editor_html.getValue();
+	var js_text= editor_js.getValue();
+	var css_text= editor_css.getValue();
+	
+	var patternHtml = /<html[^>]*>((.|[\n\r])*)<\/html>/im
+	var cssHead = /<style[^>]*>((.|[\n\r])*)<\/style>/im
+	var array_matches_css = cssHead.exec(html_text);
+	var patternjs = /<javascript[^>]*>((.|[\n\r])*)<\/javascript>/im;
+  
+	var array_matches_js = patternjs.exec(html_text);
+	
+	if(array_matches_css) {
+		html_text = html_text.replace('</style>', css_text+'\n<\/style>' );
+	} else{
+		html_text = html_text.replace('</head>', css_text+'\n<\/head>' );
+	}
+	if (array_matches_js) {
+		html_text = html_text.replace('</javascript>', js_text + '<\/javascript>');
+	} else{
+		html_text = html_text.replace('</head>', "<script type='text\/javascript'>"+js_text+"\n<\/script>\n<\/head>");
+	}
+	
+	
+	var ifr = document.createElement("iframe");
+	ifr.setAttribute("frameborder", "0");
+	ifr.setAttribute("id", "iframeResult");  
+	$(ifr).css({width:'100%', height:'100%'});
+	document.getElementById("iframewrapper").innerHTML = "";
+	document.getElementById("iframewrapper").appendChild(ifr);	
+	$("#iframewrapper").append($("<div>").addClass("spanel_mark"));
+ 
+	var ifrw = (ifr.contentWindow) ? ifr.contentWindow : (ifr.contentDocument.document) ? ifr.contentDocument.document : ifr.contentDocument;
+	ifrw.document.open();
+	ifrw.document.write(html_text);  
+	ifrw.document.close();
+  
+}
+
+
+});
+
+</script>
+
+
+
+</body>
+</html>
